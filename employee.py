@@ -2,7 +2,7 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 class Employee:
-    def __init__(self, name, salary = 0, hours = 0, hourlyPay = 0, commissionPay = 0, number_of_contracts = 0, bonus = 0):
+    def __init__(self, name, salary = 0, hours = 0, hourlyPay = 0, commissionPay = 0, number_of_contracts = 0, bonus = 0, totalSalary = 0):
         self.name = name
         self.salary = salary
         self.hours = hours
@@ -10,41 +10,44 @@ class Employee:
         self.commissionPay = commissionPay
         self.number_of_contracts = number_of_contracts
         self.bonus = bonus
+        self.totalSalary = totalSalary
 
     def get_pay(self):
         if self.salary:
-            self.salaryPay += self.salary
+            self.totalSalary += self.salary
         if self.hours:
-            self.salaryPay += (self.hours * self.hourlyPay)
+            self.totalSalary += (self.hours * self.hourlyPay)
         if self.number_of_contracts:
-            self.salaryPay += (self.number_of_contracts * self.commissionPay)
+            self.totalSalary += (self.number_of_contracts * self.commissionPay)
         if self.bonus:
-            self.salaryPay += self.bonus
-        return self.salaryPay
+            self.totalSalary += self.bonus
+        return self.totalSalary
 
     def __str__(self):
-        salaryMessage = self.name
+        salaryMessage = ""
+        # salaryMessage = self.name
 
         if self.salary:
-            salaryMessage += (f" works on a monthly salary of {self.salary}")
+            salaryMessage += f" works on a monthly salary of {self.salary}"
         else:
-            salaryMessage += (f" works on a contract of {self.hours} hours at {self.hourlyPay}/hour")
+            salaryMessage += f" works on a contract of {self.hours} hours at {self.hourlyPay}/hour"
 
         if self.number_of_contracts:
-            salaryMessage += (f" and receives a commission for {self.number_of_contracts} contract(s) at {self.commissionPay}/contract.")
+            salaryMessage += f" and receives a commission for {self.number_of_contracts} contract(s) at {self.commissionPay}/contract."
 
         if self.bonus:
-            salaryMessage += (f" and receives a bonus commission of {self.bonus}.")
+            salaryMessage += f" and receives a bonus commission of {self.bonus}."
 
         if not self.number_of_contracts and not self.bonus:
             salaryMessage += (".")
 
-        salaryMessage += (f" Their total pay is {self.salaryPay}.")
+        salaryMessage += f" Their total pay is {self.totalSalary}."
         return salaryMessage
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
 billie = Employee('Billie', salary = 4000)
+print(billie)
 
 # Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
 charlie = Employee('Charlie', hours = 100, hourlyPay = 25)
