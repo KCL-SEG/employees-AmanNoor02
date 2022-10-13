@@ -28,17 +28,17 @@ class Employee:
         if self.salary:
             salaryMessage += (f" works on a monthly salary of {self.salary}")
         else:
-            (f"works on a contract of {self.hours} hours at {self.hourlyPay}/hour")
+            salaryMessage += (f" works on a contract of {self.hours} hours at {self.hourlyPay}/hour")
 
         if self.number_of_contracts:
-            salaryMessage += (f"and receives a commission for {self.number_of_contracts} contract(s) at {self.commissionPay}/contract.")
+            salaryMessage += (f" and receives a commission for {self.number_of_contracts} contract(s) at {self.commissionPay}/contract.")
 
         if self.bonus:
             salaryMessage += (f" and receives a bonus commission of {self.bonus}.")
 
         if not self.number_of_contracts and not self.bonus:
             salaryMessage += (".")
-            
+
         salaryMessage += (f" Their total pay is {self.salaryPay}.")
         return salaryMessage
 
