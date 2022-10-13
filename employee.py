@@ -24,8 +24,7 @@ class Employee:
         return self.totalSalary
 
     def __str__(self):
-        salaryMessage = ""
-        # salaryMessage = self.name
+        salaryMessage = self.name
 
         if self.salary:
             salaryMessage += f" works on a monthly salary of {self.salary}"
@@ -47,7 +46,6 @@ class Employee:
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
 billie = Employee('Billie', salary = 4000)
-print(billie)
 
 # Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
 charlie = Employee('Charlie', hours = 100, hourlyPay = 25)
