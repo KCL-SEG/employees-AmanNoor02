@@ -45,7 +45,7 @@ class Employee:
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
-# billie = Employee('Billie', salary = 4000)
+billie = Employee('Billie', salary = 4000)
 # print(str(billie))
 # print('Billie works on a monthly salary of 4000.  Their total pay is 4000.')
 # string = 'Billie works on a monthly salary of 4000.  Their total pay is 4000.'
