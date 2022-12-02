@@ -37,7 +37,7 @@ class Employee:
         else:
             string += '.'
 
-        string += (f" Their total pay is {self.totalSalary}.")
+        string += (f"  Their total pay is {self.totalSalary}.")
         return string
 
 
